@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Check if a filename was provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <image_file>"
+    exit 1
+fi
+
+IMAGE_FILE="$1"
+
+# Open the image using Python PIL
+python3 -c "from PIL import Image; Image.open(r'$IMAGE_FILE').show()"
